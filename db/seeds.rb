@@ -12,3 +12,8 @@ url = "http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 data['drinks'].each do |drink|
   Ingredient.create(name: drink['strIngredient1'])
 end
+
+cocktails = %w(bloody mary chinchilla sausage power spicy smurf spider sugar)
+cocktails.each do |cocktail|
+  Cocktail.create(name: cocktail)
+end

@@ -1,2 +1,34 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<div class="wrapper-grey">
+  <div class="container">
+    <div class="row">
+<h3 class= 'text-center' > <%= link_to 'Make mine !', new_cocktail_path %></h3>
+
+      <% @cocktails.each do |cocktail| %>
+
+      <div class="col-xs-6 col-sm-4 padded">
+        <div class="card">
+        <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://assets.epicurious.com/photos/560d78877b55306961bf340c/1:1/w_600%2Ch_600/242527.jpg);" >  </div>
+
+            <div class="card-name">
+              <h2><%= cocktail.name.capitalize %></h2>
+           </div>
+           <div class="options-flex">
+
+               <li>edit</li>
+               <li>delete</li>
+               <li>recipe</li>
+               <li><%= link_to 'show', cocktail_path(cocktail) %></li>
+
+           </div>
+
+
+           <a class="card-link" href="#" ></a>
+
+       </div>
+     </div>
+     <% end %>
+   </div>
+ </div>
+</div>
+
+
