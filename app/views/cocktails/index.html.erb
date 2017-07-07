@@ -1,28 +1,26 @@
 <div class="wrapper-grey">
   <div class="container">
     <div class="row">
-<h3 class= 'text-center' > <%= link_to 'Make mine !', new_cocktail_path %></h3>
+    <h3 class= 'text-center' > <%= link_to 'Make mine !', new_cocktail_path, class: 'new' %></h3>
 
       <% @cocktails.each do |cocktail| %>
 
       <div class="col-xs-6 col-sm-4 padded">
         <div class="card">
-        <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://assets.epicurious.com/photos/560d78877b55306961bf340c/1:1/w_600%2Ch_600/242527.jpg);" >  </div>
+          <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://assets.epicurious.com/photos/560d78877b55306961bf340c/1:1/w_600%2Ch_600/242527.jpg);" >
+            <%= link_to '', cocktail_path(cocktail), method: :delete, class: 'fa fa-times cross' %>
+          </div>
 
-            <div class="card-name">
-              <h2><%= cocktail.name.capitalize %></h2>
-           </div>
-           <div class="options-flex">
-
-               <li>edit</li>
-               <li>delete</li>
-               <li>recipe</li>
-               <li><%= link_to 'show', cocktail_path(cocktail) %></li>
-
-           </div>
+          <div class="card-name">
+            <h2><%= cocktail.name.capitalize %></h2>
+          </div>
+          <ul class="options-flex">
+           <li><%= link_to 'Edit', edit_cocktail_path(cocktail) %></li>
+           <li><%= link_to 'Recipe', cocktail_path(cocktail) %></li>
+         </ul>
 
 
-           <a class="card-link" href="#" ></a>
+         <a class="card-link" href="cocktails/<%= cocktail.id %>" ></a>
 
        </div>
      </div>
