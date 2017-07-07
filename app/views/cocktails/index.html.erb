@@ -7,7 +7,7 @@
 
       <div class="col-xs-6 col-sm-4 padded">
         <div class="card">
-          <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://assets.epicurious.com/photos/560d78877b55306961bf340c/1:1/w_600%2Ch_600/242527.jpg);" >
+          <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>);" >
             <%= link_to '', cocktail_path(cocktail), method: :delete, class: 'fa fa-times cross' %>
           </div>
 
