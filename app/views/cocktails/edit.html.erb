@@ -1,2 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="form-group padded">
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description, placeholder: "your quantity" %>
+        <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "choose an ingredient !" %>
+        <%= f.button :submit, class: 'btn draw-border special text-center' %>
+        <% end %>
+        <h2> <%= link_to 'back', cocktail_path  %> </h2>
+      </div>
 
-  <%= render 'form', cocktail: @cocktail %>
+    </div>
+  </div>
+</div>
+
+
+

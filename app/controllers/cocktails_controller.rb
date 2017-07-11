@@ -18,6 +18,7 @@ before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
+    @dose = Dose.new()
   end
 
   def update
@@ -37,6 +38,6 @@ before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
   end
 
 def cocktail_params
-    params.require(:cocktail).permit(:name, :photo, :photo_cache)
+    params.require(:cocktail).permit(:name, :description, :ingredient_id, :photo, :photo_cache)
   end
 end

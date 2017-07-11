@@ -1,13 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(300deg, rgba(200,80,70,0.65) 0%, rgba(0,36,61,0.7) 50%), url('<%= image_path 'background.jpeg' %>');">
+  <div class="banner-content">
+    <h1>My little cocktails</h1>
+    <p>Browse, get inspired, drink.</p>
+    <div class= 'text-center' > <%= link_to 'Add cocktail !', new_cocktail_path, class: 'btn draw-border' %></div>
+  </div>
+</div>
+
+
 <div class="wrapper-grey">
   <div class="container">
     <div class="row">
-    <h3 class= 'text-center' > <%= link_to 'Make mine !', new_cocktail_path, class: 'new' %></h3>
 
       <% @cocktails.each do |cocktail| %>
 
-      <div class="col-xs-6 col-sm-4 padded">
+      <div class="col-xs-12 col-sm-4 col-md-3 padded">
         <div class="card">
-          <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>);" >
+          <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path cocktail.photo %>');" >
             <%= link_to '', cocktail_path(cocktail), method: :delete, class: 'fa fa-times cross' %>
           </div>
 
@@ -15,17 +23,19 @@
             <h2><%= cocktail.name.capitalize %></h2>
           </div>
           <ul class="options-flex">
-           <li><%= link_to 'Edit', edit_cocktail_path(cocktail) %></li>
            <li><%= link_to 'Recipe', cocktail_path(cocktail) %></li>
          </ul>
 
 
-         <a class="card-link" href="cocktails/<%= cocktail.id %>" ></a>
+         <a class="card-link" href="/cocktails/<%= cocktail.id %>" ></a>
 
        </div>
      </div>
      <% end %>
+
    </div>
+   <div class= 'text-center' > <%= link_to 'Add cocktail !', new_cocktail_path, class: 'btn draw-border' %></div>
+
  </div>
 </div>
 
